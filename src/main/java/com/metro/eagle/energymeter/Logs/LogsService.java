@@ -15,6 +15,6 @@ public class LogsService {
     }
 
     public List<Logs> getMetrics(){
-        return logsRepository.findAll();
+        return logsRepository.findFirst12ByOrderByIndexNumDesc();
     }
 }
