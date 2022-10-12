@@ -1,4 +1,4 @@
-package com.metro.eagle.energymeter.Logs;
+package com.metro.eagle.energymeter.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,8 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table
-public class Logs {
+@Table(name = "logs")
+public class ELogs {
     @Id
     @Column(name = "index")
     private Long indexNum;
@@ -48,10 +48,10 @@ public class Logs {
     @Column(name = "frequency_ac")
     private String frequencyAC;
 
-    public Logs() {
+    public ELogs() {
     }
 
-    public Logs(Long indexNum, String date, String time, String timestamp, String finalVoltageDC,
+    public ELogs(Long indexNum, String date, String time, String timestamp, String finalVoltageDC,
                 String finalCurrentDC, String finalPowerDC, String netEnergyDC, String importEnergyDC,
                 String exportEnergyDC, String finalRMSVoltageAC, String finalRMSCurrentAC,
                 String realPowerAC, String apparentPowerAC, String powerFactorAC, String netEnergyAC,

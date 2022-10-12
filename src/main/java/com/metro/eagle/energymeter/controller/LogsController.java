@@ -1,16 +1,20 @@
-package com.metro.eagle.energymeter.Logs;
+package com.metro.eagle.energymeter.controller;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import com.metro.eagle.energymeter.entity.ELogs;
+import com.metro.eagle.energymeter.service.ILogsService;
+import com.metro.eagle.energymeter.service.LogsService;
 
 @RestController
 @RequestMapping(path = "api/v1/")
 public class LogsController {
-    private final LogsService logsService;
+    private final ILogsService logsService;
 
     @Autowired
     public LogsController(LogsService logsService) {
@@ -18,7 +22,7 @@ public class LogsController {
     }
 
     @GetMapping("/metrics")
-    public List<Logs> getMetrics(){
+    public List<ELogs> getMetrics(){
         return logsService.getMetrics();
     }
 }
