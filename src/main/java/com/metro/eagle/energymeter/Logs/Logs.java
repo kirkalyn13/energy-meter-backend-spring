@@ -1,5 +1,6 @@
 package com.metro.eagle.energymeter.Logs;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -8,24 +9,43 @@ import javax.persistence.Table;
 @Table
 public class Logs {
     @Id
+    @Column(name = "index")
     private Long indexNum;
+    @Column(name = "date")
     private String date ;
+    @Column(name = "time")
     private String time;
+    @Column(name = "timestamp")
     private String timestamp;
+    @Column(name = "final_voltage_dc")
     private String finalVoltageDC;
+    @Column(name = "final_current_dc")
     private String finalCurrentDC;
+    @Column(name = "final_power_dc")
     private String finalPowerDC;
+    @Column(name = "net_energy_dc")
     private String netEnergyDC;
+    @Column(name = "import_energy_dc")
     private String importEnergyDC;
+    @Column(name = "export_energy_dc")
     private String exportEnergyDC;
+    @Column(name = "final_rms_voltage_ac")
     private String finalRMSVoltageAC;
+    @Column(name = "final_rms_current_ac")
     private String finalRMSCurrentAC;
+    @Column(name = "real_power_ac")
     private String realPowerAC;
+    @Column(name = "apparent_power_ac")
     private String apparentPowerAC;
+    @Column(name = "power_factor_ac")
     private String powerFactorAC;
+    @Column(name = "net_energy_ac")
     private String netEnergyAC;
+    @Column(name = "import_energy_ac")
     private String importEnergyAC;
+    @Column(name = "export_energy_ac")
     private String exportEnergyAC;
+    @Column(name = "frequency_ac")
     private String frequencyAC;
 
     public Logs() {

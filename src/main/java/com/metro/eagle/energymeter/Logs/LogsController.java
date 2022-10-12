@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/v1/metrics")
+@RequestMapping(path = "api/v1/")
 public class LogsController {
     private final LogsService logsService;
 
@@ -17,7 +17,7 @@ public class LogsController {
         this.logsService = logsService;
     }
 
-    @GetMapping
+    @GetMapping("/metrics")
     public List<Logs> getMetrics(){
         return logsService.getMetrics();
     }
